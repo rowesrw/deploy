@@ -2,7 +2,7 @@ from pyrogram import Client, filters
 from pyrogram import Client 
 from config import OWNER_NAME
 from source.info import (joinch)
-from source.Data import (get_dev, get_groupsr, get_channelsr, get_dev_user)
+from source.Data import (get_dev, get_groupsr, get_channelsr, get_dev_user ,get_dev_name)
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 
 import os
