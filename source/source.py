@@ -15,6 +15,7 @@ async def alive(client: Client, message):
     chat_id = message.chat.id
     bot_username = client.me.username
     dev = await get_dev(bot_username)
+    nn = await get_dev_name(client, bot_username)
     DEV_USER = await get_dev_user(bot_username)
     user = await client.get_chat(chat_id=DEV_USER)
     ch = await get_channelsr(client.me.username)
@@ -26,7 +27,7 @@ async def alive(client: Client, message):
                 InlineKeyboardButton("𝐜𝐡𝐧𝐧𝐞𝐥", url=f"{ch}"),
             ],
             [
-                 InlineKeyboardButton(f"{OWNER_NAME}", url=f"https://t.me/{DEV_USER}")
+                 InlineKeyboardButton(f"{nn}", url=f"https://t.me/{DEV_USER}")
             ],
             [ 
                  InlineKeyboardButton("اضف البوت الي مجموعتك 💎", url="https://t.me/{app.username}?startgroup=true")
@@ -35,7 +36,7 @@ async def alive(client: Client, message):
     )
 
     alive = f"""╭──── • ◈ • ────╮
-么 [𝑫𝒆𝒗 𝒔𝒐𝒖𝒓𝒄𝒆](https://t.me/R7_OX).
+么 [𝑫𝒆𝒗 𝒔𝒐𝒖𝒓𝒄𝒆](https://t.me/{DEV_USER}).
 么 [𝑪𝒉𝒂𝒏𝒏𝒆𝒍 𝒔𝒐𝒖𝒓𝒄𝒆](https://t.me/{ch}).
 么 [𝑮𝒓𝒐𝒖𝒑 𝒔𝒐𝒖𝒓𝒄𝒆](https://t.me/{gr}).
 ╰──── • ◈ • ────╯
