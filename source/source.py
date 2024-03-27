@@ -43,7 +43,7 @@ async def alive(client: Client, message):
 🚦𝑻𝒉𝒆 𝒃𝒆𝒔𝒕 𝒔𝒐𝒖𝒓𝒄𝒆 𝒕𝒆𝒍𝒆𝒈𝒓𝒂𝒎 ."""
 
     await message.reply_photo(
-        photo=f"https://graph.org/file/c8c410bc4a08f20b5287f.jpg",
+        photo=f"https://graph.org/file/1c56d17360df91a46cd72.jpg",
         caption=alive,
         reply_markup=keyboard,
     )
