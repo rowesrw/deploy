@@ -4,11 +4,11 @@ from pyromod import listen
 from pyrogram import Client as app
 from time import time
 from config import OWNER, OWNER_NAME, VID_SO
-from SEMO.info import (is_served_chat, add_served_chat, is_served_user, add_served_user, get_served_chats, get_served_users, del_served_chat, joinch)
-from SEMO.Data import (get_dev, get_bot_name, set_bot_name, get_logger, get_group, get_channel, get_dev_name, get_groupsr, get_channelsr, get_userbot, get_video_source, set_dev_user, get_dev_user, set_video_source)
+from source.info import (is_served_chat, add_served_chat, is_served_user, add_served_user, get_served_chats, get_served_users, del_served_chat, joinch)
+from source.Data import (get_dev, get_bot_name, set_bot_name, get_logger, get_group, get_channel, get_dev_name, get_groupsr, get_channelsr, get_userbot, get_video_source, set_dev_user, get_dev_user, set_video_source)
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, Message, User, ChatPrivileges, ReplyKeyboardRemove, CallbackQuery
 from pyrogram import enums
-from pyrogram.enums import ChatType, ChatMemberStatus, ParseMode, ChatMemberStatus
+from pyrogram.enums import ChatType, ChatMemberStatus, Parsourcede, ChatMemberStatus
 import os
 import re
 import textwrap
@@ -79,7 +79,7 @@ async def gen_bot(client, username, photo):
         )
         draw.text(
             (600, 340),
-            f"Dev : SEMO ELKBER",
+            f"Dev : source ELKBER",
             fill="white",
             stroke_width=1,
             stroke_fill="white",
@@ -1387,11 +1387,11 @@ async def videoo(client, message):
     await joinch(message)
   if len(listvid) == 0:
    user = await get_userbot(client.me.username)
-   async for msg in user.get_chat_history("videi_semo"):
+   async for msg in user.get_chat_history("videi_source"):
       if msg.video:
         listvid.append(msg.id)
   id = random.choice(listvid)
-  video = f"https://t.me/videi_semo/{id}"
+  video = f"https://t.me/videi_source/{id}"
   await message.reply_video(video=video, caption="**♪ 𝑱𝒐𝒊𝒏 ➧ @SOURCE_ELNGOM  💎 .**")
 
 listvidquran = []
