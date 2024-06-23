@@ -1,9 +1,9 @@
 import asyncio
 from config import OWNER, OWNER_NAME, VIDEO
 from pyrogram import Client, filters
-from SEMO.info import (remove_active, is_served_call, joinch)
-from SEMO.Data import (get_call, get_dev, get_group, get_channel)
-from SEMO.info import (add, db, download, gen_thumb)
+from Rowes.info import (remove_active, is_served_call, joinch)
+from Rowes.Data import (get_call, get_dev, get_group, get_channel)
+from Rowes.info import (add, db, download, gen_thumb)
 from pytgcalls import PyTgCalls, StreamType
 from pyrogram.enums import ChatType, ChatMemberStatus
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped

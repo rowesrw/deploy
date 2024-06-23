@@ -4,11 +4,11 @@ from pyromod import listen
 from pyrogram import Client as app
 from time import time
 from config import OWNER, OWNER_NAME, VIDEO
-from SEMO.info import (is_served_chat, add_served_chat, is_served_user, add_served_user, get_served_chats, get_served_users, del_served_chat, joinch)
-from SEMO.Data import (get_dev, get_bot_name, set_bot_name, get_logger, get_group, get_channel, get_dev_name, get_groupsr, get_channelsr, get_userbot)
+from Rowes.info import (is_served_chat, add_served_chat, is_served_user, add_served_user, get_served_chats, get_served_users, del_served_chat, joinch)
+from Rowes.Data import (get_dev, get_bot_name, set_bot_name, get_logger, get_group, get_channel, get_dev_name, get_groupsr, get_channelsr, get_userbot)
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, Message, User, ChatPrivileges, ReplyKeyboardRemove, CallbackQuery
 from pyrogram import enums
-from pyrogram.enums import ChatType, ChatMemberStatus, ParseMode, ChatMemberStatus
+from pyrogram.enums import ChatType, ChatMemberStatus, ParRowesde, ChatMemberStatus
 import os
 import re
 import textwrap
@@ -998,7 +998,7 @@ async def starhelp(client: Client, message: Message):
                             InlineKeyboardButton("English language 🇺🇲", callback_data="english")
                         ],
                         [
-                            InlineKeyboardButton("SeMo ElKbEr 🥷", user_id=f"ahmedelnqyb")
+                            InlineKeyboardButton("Rowes ElKbEr 🥷", user_id=f"ahmedelnqyb")
                         ],
                         [
                             InlineKeyboardButton("اضف البوت الي مجموعتك ❤️", url="https://t.me/{bot.username}?startgroup=true")
@@ -1394,11 +1394,11 @@ async def videoo(client, message):
     await joinch(message)
   if len(listvid) == 0:
    user = await get_userbot(client.me.username)
-   async for msg in user.get_chat_history("videi_semo"):
+   async for msg in user.get_chat_history("videi_Rowes"):
       if msg.video:
         listvid.append(msg.id)
   id = random.choice(listvid)
-  video = f"https://t.me/videi_semo/{id}"
+  video = f"https://t.me/videi_Rowes/{id}"
   await message.reply_video(video=video, caption="**♪ 𝑱𝒐𝒊𝒏 ➧ @Zo_Mbi_eyy  💎 .**")
 
 listvidquran = []

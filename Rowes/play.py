@@ -35,8 +35,8 @@ from config import API_ID, API_HASH, MONGO_DB_URL, VIDEO, OWNER, OWNER_NAME, LOG
 from motor.motor_asyncio import AsyncIOMotorClient as _mongo_client_
 from pymongo import MongoClient
 from bot import bot as man
-from SEMO.info import (db, add, is_served_call, add_active_video_chat, add_served_call, add_active_chat, gen_thumb, download, remove_active, joinch)
-from SEMO.Data import (get_logger, get_userbot, get_call, get_logger_mode, get_group, get_channel)
+from Rowes.info import (db, add, is_served_call, add_active_video_chat, add_served_call, add_active_chat, gen_thumb, download, remove_active, joinch)
+from Rowes.Data import (get_logger, get_userbot, get_call, get_logger_mode, get_group, get_channel)
 import asyncio
              
 mongodb = _mongo_client_(MONGO_DB_URL)
@@ -241,7 +241,7 @@ async def aii(client: Client, message):
 async def play(client: Client, message):
   if await joinch(message):
             return
-  SEMO = message
+  Rowes = message
   bot_username = client.me.username
   chat_id = message.chat.id
   user_id = message.from_user.id if message.from_user else "Zo_Mbi_e"
@@ -302,7 +302,7 @@ async def play(client: Client, message):
          position = len(db.get(chat)) - 1
          chatname = f"[{message.chat.title}](https://t.me/{message.chat.username})" if message.chat.username else f"{message.chat.title}"
          chatname = f"{message.author_signature}" if message.author_signature else chatname
-         requester = chatname if SEMO.views else f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
+         requester = chatname if Rowes.views else f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
          if message.from_user:
           if message.from_user.photo:
            photo_id = message.from_user.photo.big_file_id
@@ -338,7 +338,7 @@ async def play(client: Client, message):
             return await rep.delete()
          chatname = f"[{message.chat.title}](https://t.me/{message.chat.username})" if message.chat.username else f"{message.chat.title}"
          chatname = f"{message.author_signature}" if message.author_signature else chatname
-         requester = chatname if SEMO.views else f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
+         requester = chatname if Rowes.views else f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
          if message.from_user:
           if message.from_user.photo:
            photo_id = message.from_user.photo.big_file_id
@@ -389,7 +389,7 @@ async def play(client: Client, message):
          position = len(db.get(chat)) - 1
          chatname = f"[{message.chat.title}](https://t.me/{message.chat.username})" if message.chat.username else f"{message.chat.title}"
          chatname = f"{message.author_signature}" if message.author_signature else chatname
-         requester = chatname if SEMO.views else f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
+         requester = chatname if Rowes.views else f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
          await message.reply_photo(photo=photo, caption=f"**♪ Add Track To Playlist : {position} 🥁 .\n\n♪ Song Name : {title} 🎞️ .\n♪ Duration Time : {duration} ⌚ .\n♪ Request By : {requester} 👤 .**", reply_markup=InlineKeyboardMarkup(button))
          await logs(bot_username, client, message)
        else:
@@ -406,7 +406,7 @@ async def play(client: Client, message):
             return await rep.delete()
          chatname = f"[{message.chat.title}](https://t.me/{message.chat.username})" if message.chat.username else f"{message.chat.title}"
          chatname = f"{message.author_signature}" if message.author_signature else chatname
-         requester = chatname if SEMO.views else f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
+         requester = chatname if Rowes.views else f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
          await message.reply_photo(photo=photo, caption=f"**♪ Startling Playing Now 🥁 .\n\n♪ Song Name : {title} 🎞️ .\n♪ Duration Time : {duration} ⌚ .\n♪ Request By : {requester} 👤 .**", reply_markup=InlineKeyboardMarkup(button))
          await logs(bot_username, client, message)
   try:

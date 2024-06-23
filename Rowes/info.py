@@ -6,9 +6,9 @@ from pyrogram import Client, filters
 from pyrogram import Client as client
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from config import appp, OWNER, OWNER_NAME, VIDEO
-from SEMO.Data import get_data
+from Rowes.Data import get_data
 from googletrans import Translator
-from SEMO.Data import (get_call, get_app, get_userbot, get_group, get_channel, must_join)
+from Rowes.Data import (get_call, get_app, get_userbot, get_group, get_channel, must_join)
 from config import API_ID, API_HASH, MONGO_DB_URL, user, dev, call, logger, logger_mode, botname, helper as ass
 from motor.motor_asyncio import AsyncIOMotorClient as _mongo_client_
 from pymongo import MongoClient
@@ -87,19 +87,19 @@ async def gen_thumb(videoid, photo):
                     await f.close()
 
         youtube = Image.open(f"thumb{videoid}.png")
-        SEMOv = Image.open(f"{photo}")
+        Rowesv = Image.open(f"{photo}")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(5))
         enhancer = ImageEnhance.Brightness(background)
         background = enhancer.enhance(0.6)
-        Xcenter = SEMOv.width / 2
-        Ycenter = SEMOv.height / 2
+        Xcenter = Rowesv.width / 2
+        Ycenter = Rowesv.height / 2
         x1 = Xcenter - 250
         y1 = Ycenter - 250
         x2 = Xcenter + 250
         y2 = Ycenter + 250
-        logo = SEMOv.crop((x1, y1, x2, y2))
+        logo = Rowesv.crop((x1, y1, x2, y2))
         logo.thumbnail((520, 520), Image.ANTIALIAS)
         logo = ImageOps.expand(logo, border=15, fill="white")
         background.paste(logo, (50, 100))
